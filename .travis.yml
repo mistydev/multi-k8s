@@ -7,7 +7,7 @@ before_install:
   - docker build -t mistydev/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true mistydev/react-test npm test
+  - docker run -e CI=true mistydev/react-test yarn test
 
 after_success:
   - docker build -t mistydev/multi-client ./client
