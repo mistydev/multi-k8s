@@ -21,3 +21,16 @@ after_success:
   - docker push mistydev/multi-nginx
   - docker push mistydev/multi-server
   - docker push mistydev/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-1-811607584264
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id:
+    secret: $AWS_ACCESS_KEY
+  secret_access_key:
+    secret: $AWS_SECRET_KEY
