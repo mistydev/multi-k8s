@@ -4,25 +4,29 @@
 		{
 			"name": "client",
 			"image": "mistydev/multi-client",
-			"hostname": "client",
+      "hostname": "client",
+      "memory": 128,
 			"essential": false
 		},
 		{
 			"name": "server",
 			"image": "mistydev/multi-server",
-			"hostname": "api",
+      "hostname": "api",
+      "memory": 128,
 			"essential": false
 		},
 		{
 			"name": "worker",
 			"image": "mistydev/multi-worker",
-			"hostname": "worker",
+      "hostname": "worker",
+      "memory": 128,
 			"essential": false
 		},
 		{
 			"name": "nginx",
 			"image": "mistydev/multi-nginx",
-			"hostname": "nginx",
+      "hostname": "nginx",
+      "memory": 128,
 			"essential": true,
 			"portMappings": [
 				{
