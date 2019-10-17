@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: k8s-multi-com-tls
+spec:
+  secretNAme: jvcr-dev
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: jvcr.dev
+  dnsNames:
+    - jvcr.dev
+    - www.jvcr.dev
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - jvcr.dev
+          - www.jvcr.dev
