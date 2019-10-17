@@ -13,6 +13,6 @@ docker push mistydev/multi-worker:$SHA
 
 # Apply
 kubectl apply -f k8s
-kubectl set image deployments/client-deployment server=mistydev/multi-client:$SHA
+kubectl set image deployments/client-deployment client=mistydev/multi-client:$SHA
 kubectl set image deployments/server-deployment server=mistydev/multi-server:$SHA
-kubectl set image deployments/worker-deployment server=mistydev/multi-worker:$SHA
+kubectl set image deployments/worker-deployment worker=mistydev/multi-worker:$SHA
