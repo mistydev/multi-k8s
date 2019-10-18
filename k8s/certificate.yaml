@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: k8s-multi-com-tls
+  name: jvcr-dev-tls
 spec:
   secretName: jvcr-dev
   issuerRef:
